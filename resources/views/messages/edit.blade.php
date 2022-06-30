@@ -23,6 +23,13 @@ Lesson 13Chapter 8.7 MessagesController@edit
         <div class="col-6">
             {!! Form::model($message, ['route' => ['messages.update', $message->id], 'method' => 'put']) !!}
 
+                <!-- L13C10.2カラム追加によりフォーム追加ここから -->
+                <div class="form-group">
+                    {!! Form::label('title', 'タイトル:') !!}
+                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                </div>
+                <!-- L13C10.2カラム追加によりフォーム追加ここまで -->
+                
                 <div class="form-group">
                     {!! Form::label('content', 'メッセージ:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}

@@ -13,6 +13,15 @@ Lesson 13Chapter 8.6 MessagesControllerあっとshow
             <th>id</th>
             <td>{{ $message->id }}</td>
         </tr>
+        
+        <!-- カラム追加によりテーブルに１列追加ここから-->
+        <tr>
+            <th>タイトル</th>
+            <td>{{ $message->title }}</td>
+        </tr>
+        <!-- カラム追加によりテーブルに１列追加ここまで-->
+        
+        
         <tr>
             <th>メッセージ</th>
             <td>{{ $message->content }}</td>

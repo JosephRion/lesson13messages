@@ -23,6 +23,13 @@ Lesson 13Chapter 8.4 MessagesController あっとcreate, Vuew
     <div class="row">
         <div class="col-6">
             {!! Form::model($message, ['route' => 'messages.store']) !!}
+                
+                <!-- L13C10.2カラム追加によりフォーム追加ここから -->
+                <div class="form-group">
+                    {!! Form::label('title', 'タイトル:') !!}
+                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                </div>
+                <!-- L13C10.2カラム追加によりフォーム追加ここまで -->
 
                 <div class="form-group">
                     {!! Form::label('content', 'メッセージ:') !!}
