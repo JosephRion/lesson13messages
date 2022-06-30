@@ -4,20 +4,21 @@
 
 <!-- ここからページ毎のコンテンツを書く -->
 
-//Controllerから渡されたデータ ($messages) を一覧表示させましょう。<br>
-//php 形式コメントアウト<br>
+{{--//Controllerから渡されたデータ ($messages) を一覧表示させましょう。<br>
+//php 形式コメントアウト<br>--}}
 <!--HTML形式コメントアウト-->
 {{--Blade用のコメントアウトの形式--}}
 
-{{-- '<p style="color: red;">htmlspecialchars関数に通した場合--あり</p>' --}}
+{{-- '<p style="color: red;">htmlspecialchars関数に通した場合--あり</p>' 
 <br>
-{{ '<p style="color: red;">htmlspecialchars関数に通した場合</p>' }}
+ '<p style="color: red;">htmlspecialchars関数に通した場合</p>' 
 <br>
 {!! '<p style="color: red;">htmlspecialchars関数に通さなかった場合</p>' !!}
 <br>
 htmlspecialchars関数に通さなかった場合。単にそのままマークアップせず。
 <p style="color: red;">htmlspecialchars関数に通さなかった場合 pタグでマークアップ</p>
-<br>
+<br>--}}
+{{--{!! '<p style="color: red;">htmlspecialchars関数に通さなかった場合</p>' !!}--}}
 
 <h1>メッセージ一覧</h1>
 

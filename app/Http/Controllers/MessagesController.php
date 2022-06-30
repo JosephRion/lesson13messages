@@ -59,6 +59,12 @@ class MessagesController extends Controller
     //Lesson 13Chapter 8.5 MessagesController あっとstore
     public function store(Request $request)
     {
+        // バリデーションC13 C9.1 追記
+        
+        $request->validate([
+            'content' => 'required|max:255', //required (カラでない）かつ max:255 (255文字を超えていない）であることを検証
+        ]);
+        
         // メッセージを作成
         $message = new Message;
         $message->content = $request->content;
@@ -115,6 +121,11 @@ class MessagesController extends Controller
     //Lesson 13Chapter 8.8 MessagesController あっとupdate
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+        
         // idの値でメッセージを検索して取得
         $message = Message::findOrFail($id);
         // メッセージを更新

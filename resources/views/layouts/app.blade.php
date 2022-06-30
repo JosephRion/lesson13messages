@@ -31,6 +31,9 @@
         @include('commons.navbar')
 
         <div class="container">
+            {{-- エラーメッセージ resources/views/commons/error_messages.blade.phpを読み込みに行く--}}
+            @include('commons.error_messages')
+            
             @yield('content')
         </div>
         
