@@ -141,7 +141,7 @@ class MessagesController extends Controller
         $message->title = $request->title;    // L13C10.2カラム追加
         $message->content = $request->content;
         
-        //dd($message);   // 追加 デバッグ用の関数 2022.06.30
+        //dd($message);   // 追加 デバッグ用の関数 2022.06.30 ここにこないとこれは発動しない。
         
         $message->save();
 
