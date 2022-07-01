@@ -19,7 +19,11 @@ class MessagesController extends Controller
     public function index()
     {
         // メッセージ一覧を取得
-        $messages = Message::all();
+        // $messages = Message::all();
+        //$messages = Message::paginate(25); //indexでの表示件数が25件のみ
+        
+        // メッセージ一覧をidの降順で取得
+        $messages = Message::orderBy('id', 'desc')->paginate(25);
         
         //messages.index は resources/views/messages/index.blade.php を意味します。第二引数にはそのViewに渡したいデータの配列を指定します。 
         //$messages = Message::all(); で $messages に入ったデータをViewに渡すためです。
@@ -123,6 +127,8 @@ class MessagesController extends Controller
     //Lesson 13Chapter 8.8 MessagesController あっとupdate
     public function update(Request $request, $id)
     {
+        
+        
         // バリデーション
         $request->validate([
             'title' => 'required|max:255',   // L13C10.2カラム追加
@@ -134,6 +140,9 @@ class MessagesController extends Controller
         // メッセージを更新
         $message->title = $request->title;    // L13C10.2カラム追加
         $message->content = $request->content;
+        
+        dd($message);   // 追加 デバッグ用の関数 2022.06.30
+        
         $message->save();
 
         // トップページへリダイレクトさせる

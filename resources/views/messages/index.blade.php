@@ -44,7 +44,8 @@ htmlspecialchars関数に通さなかった場合。単にそのままマーク�
         </table>
     @endif
     
-    
+    {{-- ページネーションのリンク --}}
+    {{ $messages->links() }}
     
     {{-- Lesson 13Chapter 8.4 MessagesController@create のセクションで、メッセージ作成ページへのリンク --}}
     {!! link_to_route('messages.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}
