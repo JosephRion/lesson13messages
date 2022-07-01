@@ -66,7 +66,7 @@ class MessagesController extends Controller
         // バリデーションC13 C9.1 追記
         
         $request->validate([
-            'title' => 'required|max:255',   // L13C10.2カラム追加
+            'title' => 'required|max:10',   // L13C10.2カラム追加 255から10文字に変更2022.07.01..1141TKT
             'content' => 'required|max:255', //required (カラでない）かつ max:255 (255文字を超えていない）であることを検証
         ]);
         
@@ -131,7 +131,7 @@ class MessagesController extends Controller
         
         // バリデーション
         $request->validate([
-            'title' => 'required|max:255',   // L13C10.2カラム追加
+            'title' => 'required|max:10',   // L13C10.2カラム追加 255から10文字に変更2022.07.01..1141TKT
             'content' => 'required|max:255',
         ]);
         
@@ -141,7 +141,7 @@ class MessagesController extends Controller
         $message->title = $request->title;    // L13C10.2カラム追加
         $message->content = $request->content;
         
-        dd($message);   // 追加 デバッグ用の関数 2022.06.30
+        //dd($message);   // 追加 デバッグ用の関数 2022.06.30
         
         $message->save();
 
